@@ -11,7 +11,7 @@ def VoiceCommand():
         root.update()
 
         try:
-            audio =  sr.Recognizer().listen(source, timeout=2)
+            audio =  sr.Recognizer().listen(source, timeout=2, phrase_time_limit=10)
             sr.Recognizer().recognize_google(audio, language='bn-BD')
             text = sr.Recognizer().recognize_google(audio, language='bn-BD')
             T.insert(tk.END, text + " ")
